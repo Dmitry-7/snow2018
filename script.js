@@ -70,7 +70,7 @@ function draw() {
     //ctx.fillRect(snowArray[i].x,snowArray[i].y,5,5);
   }  
   for(var i in snowArray){
-    if(snowArray[i].y-20>canvas.height){
+    if(snowArray[i].y-20>canvas.height||snowArray[i].x+40<0||snowArray[i].x-40>canvas.width){
       snowArray.splice(i,1);
     }
   }
