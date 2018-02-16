@@ -57,6 +57,14 @@ function Snow(){
 
 
 function draw() {
+
+  if(Math.random()>0.1){
+  for(var i = 0; i<density; i++){
+      snowArray.push(new Snow());
+    }
+  }
+  windChange();
+
   ctx.clearRect(0,0,canvas.width,canvas.height);
   ctx.fillStyle='#161a36';
   ctx.fillRect(0,0,canvas.width,canvas.height);
@@ -74,6 +82,7 @@ function draw() {
       snowArray.splice(i,1);
     }
   }
+  requestAnimationFrame(draw);
 }
 
 
@@ -89,7 +98,9 @@ function windChange(){
   }
 }
 
- setInterval(function(){
+draw()
+
+ /*setInterval(function(){
   if(Math.random()>0.1){
     for(var i = 0; i<density; i++){
       snowArray.push(new Snow());
@@ -97,4 +108,8 @@ function windChange(){
   }
   windChange();
   requestAnimationFrame(draw);
-},20);
+},20);*/
+
+
+
+ 
